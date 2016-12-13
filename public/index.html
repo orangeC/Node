@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<h1>首页</h1>
+	<form action="" method="post">
+		<input type="text" id="username" name="username" placeholder="用户名">
+		<input type="password" id="password" name="password" placeholder="密码">
+		<input type="submit" value="提交" id="sub">
+		<span id="txt"></span>
+	</form>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$("#sub").click(function(){
+			var value = $("#username").val();
+			var pasd = $("#password").val();
+			$.post("/aaa",{"username":value,"password":pasd},function(data){
+				if(data){
+					alert("用户可以登陆！")
+				}else{
+					alert("用户不存在！")
+				}
+			})
+		})
+	</script>
+
+</body>
+</html>
